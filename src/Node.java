@@ -144,6 +144,23 @@ public class Node {
         this.link.remove(index - 1);
     }
 
+    /**
+     * Returns item at given index or throws error if index is greater than list's size
+     *
+     * @param index Index at which should item be returned
+     * @return Found item
+     */
+    public String get(int index) {
+        // If index is 0
+        if (index == 0) {
+            // Current value should be returned
+            return this.value;
+        }
+
+        // Pass the get command to the node's link
+        return this.link.get(index - 1);
+    }
+
     @Override
     public String toString() {
         // If the node doesn't have a link

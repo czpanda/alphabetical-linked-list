@@ -79,13 +79,29 @@ public class LinkedList {
      */
     public void remove(int index) {
         // If index is greater than list's size
-        if (this.getSize() < index) {
+        if (this.getSize() - 1 < index) {
             // Throw error
-            throw new IndexOutOfBoundsException("Index has to be within list's size!\nPassed value: " + index + "\nMax Value: " + this.getSize());
+            throw new IndexOutOfBoundsException("Index has to be within list's size!\nPassed value: " + index + "\nMax Value: " + (this.getSize() - 1));
         }
 
         // Pass the remove command to the node's link
         this.content.remove(index);
+    }
+
+    /**
+     * Returns item at given index or throws error if index is greater than list's size
+     *
+     * @param index Index at which should item be returned
+     * @return Found item
+     */
+    public String get(int index) {
+        // If index is greater than list's size
+        if (this.getSize() - 1 < index) {
+            // Throw error
+            throw new IndexOutOfBoundsException("Index has to be within list's size!\nPassed value: " + index + "\nMax Value: " + (this.getSize() - 1));
+        }
+
+        return this.content.get(index);
     }
 
     @Override

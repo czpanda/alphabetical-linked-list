@@ -78,7 +78,29 @@ class LinkedListTest {
         assertFalse(secondList.contains("ZB item"));
         assertEquals("A item -> PA item -> PP item -> Pa item -> ZA item -> ZZ item", secondList.toString());
 
-        assertThrows(IndexOutOfBoundsException.class, () -> secondList.remove(10), "Index has to be within list's size!\nPassed value: 10\nMax Value: 8");
+        assertThrows(IndexOutOfBoundsException.class, () -> secondList.remove(10), "Index has to be within list's size!\nPassed value: 10\nMax Value: 7");
+
+    }
+
+    @Test
+    public void testGet() {
+        assertEquals("First item", firstList.get(0));
+        assertEquals("Fourth item", firstList.get(1));
+        assertEquals("Second item", firstList.get(2));
+        assertEquals("Third item", firstList.get(3));
+
+        assertThrows(IndexOutOfBoundsException.class, () -> firstList.get(4), "Index has to be within list's size!\nPassed value: 4\nMax Value: 3");
+
+        assertEquals("A item", secondList.get(0));
+        assertEquals("PA item", secondList.get(1));
+        assertEquals("PP item", secondList.get(2));
+        assertEquals("Pa item", secondList.get(3));
+        assertEquals("Q item", secondList.get(4));
+        assertEquals("ZA item", secondList.get(5));
+        assertEquals("ZB item", secondList.get(6));
+        assertEquals("ZZ item", secondList.get(7));
+
+        assertThrows(IndexOutOfBoundsException.class, () -> secondList.get(10), "Index has to be within list's size!\nPassed value: 10\nMax Value: 7");
 
     }
 }
