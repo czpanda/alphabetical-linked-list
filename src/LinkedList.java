@@ -78,6 +78,12 @@ public class LinkedList {
      * @param index Index at which should item be removed
      */
     public void remove(int index) {
+        // If list doesn't contain any item
+        if (this.getSize() == 0) {
+            // Throw error
+            throw new RuntimeException("You can't remove anything from an empty list!");
+        }
+
         // If index is greater than list's size
         if (this.getSize() - 1 < index) {
             // Throw error
@@ -95,6 +101,12 @@ public class LinkedList {
      * @return Found item
      */
     public String get(int index) {
+        // If list doesn't contain any item
+        if (this.getSize() == 0) {
+            // Throw error
+            throw new RuntimeException("You can't remove anything from an empty list!");
+        }
+
         // If index is greater than list's size
         if (this.getSize() - 1 < index) {
             // Throw error

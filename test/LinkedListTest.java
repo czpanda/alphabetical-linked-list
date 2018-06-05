@@ -78,8 +78,7 @@ class LinkedListTest {
         assertFalse(secondList.contains("ZB item"));
         assertEquals("A item\nPA item\nPP item\nPa item\nZA item\nZZ item", secondList.toString());
 
-        assertThrows(IndexOutOfBoundsException.class, () -> secondList.remove(10), "Index has to be within list's size!\nPassed value: 10\nMax Value: 7");
-
+        assertThrows(RuntimeException.class, () -> thirdList.remove(10), "You can't remove anything from an empty list!");
     }
 
     @Test
@@ -102,6 +101,7 @@ class LinkedListTest {
 
         assertThrows(IndexOutOfBoundsException.class, () -> secondList.get(10), "Index has to be within list's size!\nPassed value: 10\nMax Value: 7");
 
+        assertThrows(RuntimeException.class, () -> thirdList.get(0), "You can't remove anything from an empty list!");
     }
 
     @Test
