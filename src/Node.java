@@ -113,15 +113,6 @@ public class Node {
         return value;
     }
 
-    /**
-     * Returns a link of current Node
-     *
-     * @return Link of current Node
-     */
-    public Node getLink() {
-        return link;
-    }
-
     public void remove(int index) {
         // If index isn't 0 and current node doesn't link
         if (index != 0 && this.link == null) {

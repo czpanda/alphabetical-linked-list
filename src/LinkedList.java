@@ -67,6 +67,10 @@ public class LinkedList {
     }
 
     public void remove(int index) {
+        if (this.getSize() < index) {
+            throw new IndexOutOfBoundsException("Index has to be within list's size!\nPassed value: " + index + "\nMax Value: " + this.getSize());
+        }
+
         // If the list is empty
         if (this.content == null) {
             // Do nothing

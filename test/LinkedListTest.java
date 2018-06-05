@@ -70,7 +70,6 @@ class LinkedListTest {
         assertFalse(firstList.contains("First item"));
         assertEquals("Fourth item -> Second item -> Third item", firstList.toString());
 
-        secondList.remove(10);
         secondList.remove(4);
         secondList.remove(5);
 
@@ -78,6 +77,8 @@ class LinkedListTest {
         assertFalse(secondList.contains("Q item"));
         assertFalse(secondList.contains("ZB item"));
         assertEquals("A item -> PA item -> PP item -> Pa item -> ZA item -> ZZ item", secondList.toString());
+
+        assertThrows(IndexOutOfBoundsException.class, () -> secondList.remove(10), "Index has to be within list's size!\nPassed value: 10\nMax Value: 8");
 
     }
 }
