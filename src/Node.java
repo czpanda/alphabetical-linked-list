@@ -115,6 +115,7 @@ public class Node {
 
     /**
      * Removes item at given index
+     *
      * @param index Index at which should item be removed
      */
     public void remove(int index) {

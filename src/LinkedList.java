@@ -57,6 +57,7 @@ public class LinkedList {
 
     /**
      * Returns an information whether list contains given String
+     *
      * @param item Item to be found
      * @return Information whether list contains given String
      */
@@ -73,6 +74,7 @@ public class LinkedList {
 
     /**
      * Removes item at given index or throws error if index is greater than list's size
+     *
      * @param index Index at which should item be removed
      */
     public void remove(int index) {
