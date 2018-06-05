@@ -101,7 +101,35 @@ public class LinkedList {
             throw new IndexOutOfBoundsException("Index has to be within list's size!\nPassed value: " + index + "\nMax Value: " + (this.getSize() - 1));
         }
 
+        // Pass the get command to the node's link
         return this.content.get(index);
+    }
+
+    /**
+     * Filter list just to elements which start with a given character
+     *
+     * @param startingCharacter Starting character
+     * @return Filtered list
+     */
+    public LinkedList filter(char startingCharacter) {
+        // Create an empty list
+        LinkedList list = new LinkedList();
+
+        // Loop thought each item in the list
+        for(int i = 0; i < this.content.getSize(); i ++) {
+            // Store current item
+            String current = this.content.get(i);
+
+            // If current item start with a given character
+            if (current.charAt(0) == startingCharacter) {
+                System.out.println(current);
+                // Add it to the list
+                list.add(current);
+            }
+        }
+
+        // Return filtered list
+        return list;
     }
 
     @Override

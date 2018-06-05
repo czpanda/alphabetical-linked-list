@@ -103,4 +103,13 @@ class LinkedListTest {
         assertThrows(IndexOutOfBoundsException.class, () -> secondList.get(10), "Index has to be within list's size!\nPassed value: 10\nMax Value: 7");
 
     }
+
+    @Test
+    public void testFilter() {
+        LinkedList firstFilteredList = firstList.filter('F');
+        assertEquals("First item -> Fourth item", firstFilteredList.toString());
+
+        LinkedList secondFilteredList = secondList.filter('Z');
+        assertEquals("ZA item -> ZB item -> ZZ item", secondFilteredList.toString());
+    }
 }
