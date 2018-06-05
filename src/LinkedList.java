@@ -55,6 +55,11 @@ public class LinkedList {
         return this.content.getSize();
     }
 
+    /**
+     * Returns an information whether list contains given String
+     * @param item Item to be found
+     * @return Information whether list contains given String
+     */
     public boolean contains(String item) {
         // If the list is empty
         if (this.content == null) {
@@ -66,6 +71,10 @@ public class LinkedList {
         return this.content.contains(item);
     }
 
+    /**
+     * Removes item at given index or throws error if index is greater than list's size
+     * @param index Index at which should item be removed
+     */
     public void remove(int index) {
         if (this.getSize() < index) {
             throw new IndexOutOfBoundsException("Index has to be within list's size!\nPassed value: " + index + "\nMax Value: " + this.getSize());

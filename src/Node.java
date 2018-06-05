@@ -113,6 +113,10 @@ public class Node {
         return value;
     }
 
+    /**
+     * Removes item at given index
+     * @param index Index at which should item be removed
+     */
     public void remove(int index) {
         // If index isn't 0 and current node doesn't link
         if (index != 0 && this.link == null) {
