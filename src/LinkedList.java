@@ -122,7 +122,6 @@ public class LinkedList {
 
             // If current item start with a given character
             if (current.charAt(0) == startingCharacter) {
-                System.out.println(current);
                 // Add it to the list
                 list.add(current);
             }

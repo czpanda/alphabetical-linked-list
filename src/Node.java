@@ -169,7 +169,7 @@ public class Node {
             return this.value;
         }
 
-        // Return node's value followed by -> and the result of this.link.toString() method
-        return this.value + " -> " + this.link;
+        // Return node's value followed by new line and the result of this.link.toString() method
+        return this.value + "\n" + this.link;
     }
 }

@@ -57,8 +57,8 @@ class LinkedListTest {
 
     @Test
     public void testToString() {
-        assertEquals("First item -> Fourth item -> Second item -> Third item", firstList.toString());
-        assertEquals("A item -> PA item -> PP item -> Pa item -> Q item -> ZA item -> ZB item -> ZZ item", secondList.toString(), "");
+        assertEquals("First item\nFourth item\nSecond item\nThird item", firstList.toString());
+        assertEquals("A item\nPA item\nPP item\nPa item\nQ item\nZA item\nZB item\nZZ item", secondList.toString(), "");
         assertEquals("Empty list!", thirdList.toString(), "");
     }
 
@@ -68,7 +68,7 @@ class LinkedListTest {
 
         assertTrue(firstList.getSize() == 3);
         assertFalse(firstList.contains("First item"));
-        assertEquals("Fourth item -> Second item -> Third item", firstList.toString());
+        assertEquals("Fourth item\nSecond item\nThird item", firstList.toString());
 
         secondList.remove(4);
         secondList.remove(5);
@@ -76,7 +76,7 @@ class LinkedListTest {
         assertTrue(secondList.getSize() == 6);
         assertFalse(secondList.contains("Q item"));
         assertFalse(secondList.contains("ZB item"));
-        assertEquals("A item -> PA item -> PP item -> Pa item -> ZA item -> ZZ item", secondList.toString());
+        assertEquals("A item\nPA item\nPP item\nPa item\nZA item\nZZ item", secondList.toString());
 
         assertThrows(IndexOutOfBoundsException.class, () -> secondList.remove(10), "Index has to be within list's size!\nPassed value: 10\nMax Value: 7");
 
@@ -107,9 +107,9 @@ class LinkedListTest {
     @Test
     public void testFilter() {
         LinkedList firstFilteredList = firstList.filter('F');
-        assertEquals("First item -> Fourth item", firstFilteredList.toString());
+        assertEquals("First item\nFourth item", firstFilteredList.toString());
 
         LinkedList secondFilteredList = secondList.filter('Z');
-        assertEquals("ZA item -> ZB item -> ZZ item", secondFilteredList.toString());
+        assertEquals("ZA item\nZB item\nZZ item", secondFilteredList.toString());
     }
 }
