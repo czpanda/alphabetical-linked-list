@@ -10,20 +10,20 @@ class LinkedListTest {
     @BeforeEach
     public void beforeEach() {
         firstList = new LinkedList()
-                .addItem("Second item")
-                .addItem("First item")
-                .addItem("Third item")
-                .addItem("Fourth item");
+                .add("Second item")
+                .add("First item")
+                .add("Third item")
+                .add("Fourth item");
 
         secondList = new LinkedList()
-                .addItem("ZZ item")
-                .addItem("ZB item")
-                .addItem("ZA item")
-                .addItem("Q item")
-                .addItem("A item")
-                .addItem("PP item")
-                .addItem("PA item")
-                .addItem("Pa item");
+                .add("ZZ item")
+                .add("ZB item")
+                .add("ZA item")
+                .add("Q item")
+                .add("A item")
+                .add("PP item")
+                .add("PA item")
+                .add("Pa item");
 
         thirdList = new LinkedList();
     }

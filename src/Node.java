@@ -35,7 +35,7 @@ public class Node {
      *
      * @param item String to be added to the node
      */
-    public void addItem(String item) {
+    public void add(String item) {
         // If the node doesn't have a link
         if (this.link == null) {
             // Set the link as new Node containing the item
@@ -61,7 +61,7 @@ public class Node {
         }
 
         // Pass the item to be added to the Node link
-        this.link.addItem(item);
+        this.link.add(item);
     }
 
     /**

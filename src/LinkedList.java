@@ -10,7 +10,7 @@ public class LinkedList {
      * @param item String to be added to the list
      * @return LinkedList instance - used for chaining
      */
-    public LinkedList addItem(String item) {
+    public LinkedList add(String item) {
         // If the list is empty
         if (this.content == null) {
             // Create new node with a passed item
@@ -33,7 +33,7 @@ public class LinkedList {
         }
 
         // Pass the item to be added to the list link
-        this.content.addItem(item);
+        this.content.add(item);
 
         // Return the current instance
         return this;
