@@ -1,24 +1,32 @@
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class LinkedListTest {
-    private LinkedList firstList = new LinkedList()
-        .addItem("Second item")
-        .addItem("First item")
-        .addItem("Third item")
-        .addItem("Fourth item");
+    private LinkedList firstList;
+    private LinkedList secondList;
+    private LinkedList thirdList;
 
-    private LinkedList secondList = new LinkedList()
-        .addItem("ZZ item")
-        .addItem("ZB item")
-        .addItem("ZA item")
-        .addItem("Q item")
-        .addItem("A item")
-        .addItem("PP item")
-        .addItem("PA item")
-        .addItem("Pa item");
+    @BeforeEach
+    public void beforeEach() {
+        firstList = new LinkedList()
+                .addItem("Second item")
+                .addItem("First item")
+                .addItem("Third item")
+                .addItem("Fourth item");
 
-    private LinkedList thirdList = new LinkedList();
+        secondList = new LinkedList()
+                .addItem("ZZ item")
+                .addItem("ZB item")
+                .addItem("ZA item")
+                .addItem("Q item")
+                .addItem("A item")
+                .addItem("PP item")
+                .addItem("PA item")
+                .addItem("Pa item");
+
+        thirdList = new LinkedList();
+    }
 
     @Test
     public void testContains() {
@@ -52,5 +60,24 @@ class LinkedListTest {
         assertEquals("First item -> Fourth item -> Second item -> Third item", firstList.toString());
         assertEquals("A item -> PA item -> PP item -> Pa item -> Q item -> ZA item -> ZB item -> ZZ item", secondList.toString(), "");
         assertEquals("Empty list!", thirdList.toString(), "");
+    }
+
+    @Test
+    public void testRemove() {
+        firstList.remove(0);
+
+        assertTrue(firstList.getSize() == 3);
+        assertFalse(firstList.contains("First item"));
+        assertEquals("Fourth item -> Second item -> Third item", firstList.toString());
+
+        secondList.remove(10);
+        secondList.remove(4);
+        secondList.remove(5);
+
+        assertTrue(secondList.getSize() == 6);
+        assertFalse(secondList.contains("Q item"));
+        assertFalse(secondList.contains("ZB item"));
+        assertEquals("A item -> PA item -> PP item -> Pa item -> ZA item -> ZZ item", secondList.toString());
+
     }
 }

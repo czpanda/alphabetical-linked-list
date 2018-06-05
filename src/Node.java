@@ -113,6 +113,41 @@ public class Node {
         return value;
     }
 
+    /**
+     * Returns a link of current Node
+     *
+     * @return Link of current Node
+     */
+    public Node getLink() {
+        return link;
+    }
+
+    public void remove(int index) {
+        // If index isn't 0 and current node doesn't link
+        if (index != 0 && this.link == null) {
+            // Break
+            return;
+        }
+
+        // If current value should be removed
+        if (index == 0) {
+            // Store temporary value
+            Node link = this.link;
+
+            // Set value of current Node to value of its link
+            this.value = link.value;
+
+            // Set link of current Node to link of its link
+            this.link = link.link;
+
+            // Break
+            return;
+        }
+
+        // Pass the remove command to the node's link
+        this.link.remove(index - 1);
+    }
+
     @Override
     public String toString() {
         // If the node doesn't have a link

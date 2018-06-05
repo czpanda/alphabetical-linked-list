@@ -66,6 +66,17 @@ public class LinkedList {
         return this.content.contains(item);
     }
 
+    public void remove(int index) {
+        // If the list is empty
+        if (this.content == null) {
+            // Do nothing
+            return;
+        }
+
+        // Pass the remove command to the node's link
+        this.content.remove(index);
+    }
+
     @Override
     public String toString() {
         // If the list is empty
