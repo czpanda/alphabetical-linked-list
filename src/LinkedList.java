@@ -78,14 +78,10 @@ public class LinkedList {
      * @param index Index at which should item be removed
      */
     public void remove(int index) {
+        // If index is greater than list's size
         if (this.getSize() < index) {
+            // Throw error
             throw new IndexOutOfBoundsException("Index has to be within list's size!\nPassed value: " + index + "\nMax Value: " + this.getSize());
-        }
-
-        // If the list is empty
-        if (this.content == null) {
-            // Do nothing
-            return;
         }
 
         // Pass the remove command to the node's link
