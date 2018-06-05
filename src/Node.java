@@ -48,13 +48,13 @@ public class Node {
         // If the passed item needs to be placed in front of current value
         if (this.value.compareTo(item) > 0) {
             // Store temporary value
-            Node node = this;
+            String temp = this.value;
 
             // Set the node value to passed value
             this.value = item;
 
             // Set the link as the current Node
-            this.link = node;
+            this.link = new Node(temp, this.link);
 
             // Break
             return;
